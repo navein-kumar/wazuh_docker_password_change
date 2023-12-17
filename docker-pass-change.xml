@@ -1,0 +1,18 @@
+
+https://documentation.wazuh.com/current/deployment-options/docker/wazuh-container.html#change-pwd-existing-usr
+
+1)
+docker-compose down
+2)
+docker run --rm -ti wazuh/wazuh-indexer:4.7.0 bash /usr/share/wazuh-indexer/plugins/opensearch-security/tools/hash.sh
+enter pass get hash value: CodesecSiem
+$2y$12$RtmOm/kvDy7vh56adOb31.cAiIrGCUwnbsg9YbvRNM2Z9J1wOnlJK
+
+config/wazuh_indexer/internal_users.yml
+
+update hash in admin,kibanaserver
+
+3) docker-compose.yml
+
+update in docker-compose file
+
